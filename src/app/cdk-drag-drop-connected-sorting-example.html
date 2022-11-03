@@ -1,0 +1,18 @@
+<div cdkDropList (cdkDropListDropped)="dropColumns($event)">
+	<div cdkDropListGroup>
+		<div class="example-container" *ngFor="let items of list;let i=index" cdkDrag>
+			<h2>{{items.head}}</h2>
+
+			<div cdkDropList #todoList="cdkDropList" [cdkDropListData]="items.items"
+				class="example-list" (cdkDropListDropped)="drop($event)">
+				<div class="example-box" *ngFor="let item of items.items" cdkDrag>{{item}}</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<!-- Copyright 2019 Google LLC. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->
